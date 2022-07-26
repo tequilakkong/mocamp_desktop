@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOCAMP</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <script src="assets/js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/c152054233.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script><!--Swiper-->
+    <!--Desktop/Mobile 적응형 레이아웃-->
+    <script>
+        var UserAgent = navigator.userAgent; 
+        if (UserAgent.match(/iPhone|ipad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null)
+            {
+              location.href = "https://tequilakkong.github.io/m_mocamp/"; /* 모바일 홈페이지 경로 */
+            }
+    </script>
+    <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header_container">
+            <header>
+                <div class="util_menu_wrap inner_container">
+                    <div class="util_menu">
+                        <ul class="horizon">
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="local_menu_wrap horizon inner_container">
+                    <div class="logo_menu horizon">
+                        <h1>
+                            <a href="#" class="logo">
+                                <span><img src="assets/img/icon/mocamp_icon.svg" alt="mocamp_logo"></span>
+                                mocamp
+                            </a>
+                        </h1>
+                        <div class="top_search_form">
+                            <!-- <form action="#" method="get"> -->
+                                <!-- <fieldset> -->
+                                    <!-- <legend>통합검색창</legend> -->
+                                    <div class="search_box">
+                                        <label for="all_search" class="blind">통합검색</label>
+                                        <input type="text" id="all_search" title="검색어" placeholder="검색어를 입력해 주세요" maxlength="30">
+                                        <button type="button" class="btn_search">
+                                            <img src="assets/img/icon/icon_search_thin.svg" alt="검색버튼"><span class="blind">검색</span>
+                                        </button>
+                                    </div>
+                                <!-- </fieldset> -->
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                    <div class="private_menu">
+                        <ul class="horizon">
+                            <li>
+                                <a href="#">
+                                    <p><img src="assets/img/icon/icon_user_circle_thin.svg" alt=""></p>
+                                    <p>마이메뉴</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p><img src="assets/img/icon/icon_info_scroll_thin.svg" alt=""></p>
+                                    <p>예약내역</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p><img src="assets/img/icon/icon_heart_thin.svg" alt=""></span>
+                                    <p>찜</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="global_menu_wrap">
+                    <div class="horizon inner_container">
+                        <nav class="left_menu">
+                            <a href="#" class="btn_menu_all">
+                                <span class="btn_menu_all_icon"><img src="assets/img/icon/icon_hamburger_menu_thin.svg"></span>
+                                <span>전체메뉴</span>
+                            </a>
+                        </nav>
+                        <nav class="list_gnb_menu">
+                            <ul class="gnb_inner horizon">
+                                <li class="gnb_tit_list">
+                                    <a href="#" class="gnb_tit">캠핑</a>
+                                    <div class="list_depth2_wrap">
+                                        <ul class="list_depth2">
+                                            <li><a href="#">실시간 예약</a></li>
+                                            <li><a href="#">전국 캠핑장 찾기</a></li>
+                                            <li><a href="#">이 달의 추천</a></li>
+                                            <li><a href="#">캠핑 소식</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="gnb_tit_list">
+                                    <a href="#" class="gnb_tit">체험</a>
+                                    <div class="list_depth2_wrap">
+                                        <ul class="list_depth2">
+                                            <li><a href="#">실시간 예약</a></li>
+                                            <li><a href="#">테마별 찾기</a></li>
+                                            <li><a href="#">인기 체험</a></li>
+                                            <li><a href="#">체험 이벤트</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="gnb_tit_list">
+                                    <a href="#" class="gnb_tit">렌트카</a>
+                                    <div class="list_depth2_wrap">
+                                        <ul class="list_depth2">
+                                            <li><a href="#">렌트카 예약</a></li>
+                                            <li><a href="#">장기 렌트</a></li>
+                                            <li><a href="#">카라반 렌트</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="gnb_tit_list">
+                                    <a href="#" class="gnb_tit">매거진</a>
+                                    <div class="list_depth2_wrap">
+                                        <ul class="list_depth2">
+                                            <li><a href="#">MO Magazine</a></li>
+                                            <li><a href="#">캠핑 뉴스</a></li>
+                                            <li><a href="#">캠핑 안전수칙</a></li>
+                                            <li><a href="#">전국 캠핑장 지도</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="gnb_tit_list">
+                                    <a href="#" class="gnb_tit">커뮤니티</a>
+                                    <div class="list_depth2_wrap">
+                                        <ul class="list_depth2">
+                                            <li><a href="#">공지사항</a></li>
+                                            <li><a href="#">게시판</a></li>
+                                            <li><a href="#">SNS</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" class="gnb_tit">스토어</a>
+                                </li>
+                            </ul>
+                            <span class="target"></span>    
+                        </nav>
+                    </div>
+                    <div class="list_total_menu">
+                        <div class="menu_list_wrap inner_container">
+                            <ul>
+                                <li><a href="#none"><h3>캠핑</h3></a></li>
+                                <li><a href="#none">실시간 예약</a></li>
+                                <li><a href="#none">전국 캠핑장 찾기</a></li>
+                                <li><a href="#none">이 달의 추천</a></li>
+                                <li><a href="#none">캠핑 소식</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#none"><h3>체험</h3></a></li>
+                                <li><a href="#none">실시간 예약</a></li>
+                                <li><a href="#none">테마별 찾기</a></li>
+                                <li><a href="#none">인기 체험</a></li>
+                                <li><a href="#none">체험 이벤트</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#none"><h3>렌트카</h3></a></li>
+                                <li><a href="#none">렌트카 예약</a></li>
+                                <li><a href="#none">장기 렌트</a></li>
+                                <li><a href="#none">카라반 렌트</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#none"><h3>매거진</h3></a></li>
+                                <li><a href="#none">MO Magazine</a></li>
+                                <li><a href="#none">캠핑 뉴스</a></li>
+                                <li><a href="#none">캠핑 안전수칙</a></li>
+                                <li><a href="#none">전국 캠핑장 지도</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#none"><h3>커뮤니티</h3></a></li>
+                                <li><a href="#none">공지사항</a></li>
+                                <li><a href="#none">게시판</a></li>
+                                <li><a href="#none">SNS</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#none"><h3>스토어</h3></a></li>
+                            </ul>
+                        <a href="#" class="btn_close">닫기</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div id="main_container">
+            <div class="visual_wrap">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="gallbox">
+                                <img src="assets/img/visual_main_01.jpg">
+                                <div class="visual_txt_box">
+                                    <p class="sub_tit">캠핑에 감성 한 스푼 더하기</p>
+                                    <p class="main_tit">카라반에서<br>특별한 하루를</p>
+                                    <p class="subsrp">~60% 할인</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallbox">
+                                <img src="assets/img/visual_main_02.jpg">
+                                <div class="visual_txt_box">
+                                    <p class="sub_tit">침낭부터 텐트까지</p>
+                                    <p class="main_tit">캠핑 용품<br>최대 60% 할인</p>
+                                    <p class="subsrp">7/10 ~ 7/30</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallbox">
+                                <img src="assets/img/visual_main_03_cut.jpg">
+                                <div class="visual_txt_box">
+                                    <p class="sub_tit">검증된 후기만 모아 선별한</p>
+                                    <p class="main_tit">전국 차박지<br>추천 TOP 10</p>
+                                    <p class="subsrp">SNS 공유 이벤트</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallbox">
+                                <img src="assets/img/visual_main_04.jpg">
+                                <div class="visual_txt_box">
+                                    <p class="sub_tit">mocamp 단독 오픈!</p>
+                                    <p class="main_tit">애견동반 캠핑장<br>추가 할인</p>
+                                    <p class="subsrp">애견용품 증정 EVNET</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="search_form_wrap"><!--조건 검색 영역-->
+                    <div class="search_form"><!--조건 검색 박스-->
+                        <div class="search_form_inner">
+                            <div class="search_tabs_wrap"><!--조건별검색 상단-->
+                                <div class="search_tabs bnb_type">
+                                    <button type="button" class="reserv_btn selected">전체</button>
+                                    <button type="button" class="reserv_btn">야영</button>
+                                    <button type="button" class="reserv_btn">카라반</button>
+                                    <button type="button" class="reserv_btn">글램핑</button>
+                                </div>
+                                <div class="filter">
+                                    <a href="#none">
+                                        <span>세부필터</span>
+                                    </a>
+                                </div>
+                            </div><!--//조건별검색 상단-->
+                            <div class="search_select_wrap"><!--조건별검색 하단-->
+                                <form class="search_select">
+                                    <fieldset>
+                                        <legend>캠핑장 검색 조건</legend>
+                                        <div class="field_inner">
+                                            <div class="place_wrap">
+                                                <h4>여행지</h4>
+                                                <div class="select_area">
+                                                    <input type="text" placeholder="여행지 선택" title="여행지를 선택해주세요." value="">
+                                                    <button class="open_pop_btn" type="button" title="여행지 선택">여행지 선택하기</button>
+                                                </div>
+                                            </div>
+                                            <div class="date_wrap">
+                                                <div class="checkin">
+                                                    <h4>체크인</h4>
+                                                    <div class="select_area">
+                                                        <input type="text" placeholder="체크인 날짜" title="체크인 날짜를 선택해주세요." value="">
+                                                        <button class="open_pop_btn" type="button" title="체크인 날짜 선택">체크인 날짜 선택하기</button>
+                                                    </div>
+                                                </div>
+                                                <div class="checkout">
+                                                    <h4>체크아웃</h4>
+                                                    <div class="select_area">
+                                                        <input type="text" placeholder="체크아웃 날짜" title="체크아웃 날짜를 선택해주세요." value="">
+                                                        <button class="open_pop_btn" type="button" title="체크아웃 날짜 선택">체크아웃 날짜 선택하기</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="person_wrap">
+                                                <h4>인원수</h4>
+                                                <div class="select_area">
+                                                    <input type="text" placeholder="인원수 선택" title="인원수를 선택해주세요." value="">
+                                                    <button class="open_pop_btn" type="button" title="인원수 선택">인원수 선택하기</button>
+                                                </div>
+                                            </div>
+                                            <div class="option_wrap">
+                                                <h4>추가 옵션</h4>
+                                                <div class="select_area">
+                                                    <input type="text" placeholder="추가 옵션" title="추가 옵션을 선택해주세요." value="">
+                                                    <button class="open_pop_btn" type="button" title="추가 옵션 선택">추가 옵션 선택하기</button>
+                                                </div>
+                                            </div>
+                                            <button class="go_search_btn" type="submit"><span>캠핑장 검색</span></button>
+                                        </div>
+                                    </fieldset>
+                                    <div class="pop_box"><!--해당 감싸는 div는 삭제 예정-->
+                                        <div class="pop_place pop">
+                                            <div class="pop_position">
+                                                <div class="pop_header">
+                                                    <h2>지역 선택</h2>
+                                                    <button class="pop_close_btn" type="button" aria-label="닫기">팝업창 닫기</button>
+                                                </div>
+                                                <div class="pop_contents">
+                                                    <div class="place_province">
+                                                        <ul>
+                                                            <li><h4>전체/도</h4></li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                            <li>경기도</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="place_city">
+                                                        <ul class="city_gyeonggi">
+                                                            <li><h4>전체/시/군</h4></li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                            <li>파주시</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pop_date_in pop">
+                                            <div class="pop_position">
+                                                <div class="pop_header">
+                                                    <h2>체크인 날짜</h2>
+                                                    <button class="pop_close_btn" type="button" aria-label="닫기">팝업창 닫기</button>
+                                                </div>
+                                                <div class="pop_contents">
+                                                    <input type="text" id="datepicker" width="276">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pop_date_out pop">
+                                            <div class="pop_position">
+                                                <div class="pop_header">
+                                                    <h2>체크아웃 날짜</h2>
+                                                    <button class="pop_close_btn" type="button" aria-label="닫기">팝업창 닫기</button>
+                                                </div>
+                                                <div class="pop_contents">
+                                                    <input type="text" id="datepicker2" width="276">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pop_person pop">
+                                            <div class="pop_position">
+                                                <div class="pop_header">
+                                                    <h2>인원수 선택</h2>
+                                                    <button class="pop_close_btn" type="button" aria-label="닫기">팝업창 닫기</button>
+                                                </div>
+                                                <div class="pop_contents">
+                                                    <div class="layer">
+                                                        <ul class="quantity_type_txt">
+                                                            <li>
+                                                                <span>성인(만 13세 이상)</span>
+                                                            </li>
+                                                            <li>
+                                                                <span>소아(만 2세 ~ 만 13세 이상)</span>
+                                                            </li>
+                                                            <li>
+                                                                <span>유아(24개월 미만)</span>
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="quantity_selector">
+                                                            <li>
+                                                                <button class="controller_minus">
+                                                                    <span>-</span>
+                                                                </button>
+                                                                <label class="quantity_now">
+                                                                    <span>1</span>
+                                                                </label>
+                                                                <button class="controller_plus">
+                                                                    <span>+</span>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="controller_minus">
+                                                                    <span>-</span>
+                                                                </button>
+                                                                <label class="quantity_now">
+                                                                    <span>0</span>
+                                                                </label>
+                                                                <button class="controller_plus">
+                                                                    <span>+</span>
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button class="controller_minus">
+                                                                    <span>-</span>
+                                                                </button>
+                                                                <label class="quantity_now">
+                                                                    <span>0</span>
+                                                                </label>
+                                                                <button class="controller_plus">
+                                                                    <span>+</span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pop_option pop">
+                                            <div class="pop_position">
+                                                <div class="pop_header">
+                                                    <h2>추가 옵션</h2>
+                                                    <button class="pop_close_btn" type="button" aria-label="닫기">팝업창 닫기</button>
+                                                </div>
+                                                <div class="pop_contents">
+                                                    <div class="layer">
+                                                        <div class="check_option">
+                                                            <ul>
+                                                                <li><input type="checkbox" title="반려동물"><label for="" class="label_name">반려동물</label></li>
+                                                                <li><input type="checkbox" title="전기"><label for="" class="label_name">전기</label></li>
+                                                                <li><input type="checkbox" title="무선인터넷"><label for="" class="label_name">무선인터넷</label></li>
+                                                                <li><input type="checkbox" title="장작판매"><label for="" class="label_name">장작판매</label></li>
+                                                                <li><input type="checkbox" title="온수"><label for="" class="label_name">온수</label></li>
+                                                                <li><input type="checkbox" title="트렘폴린"><label for="" class="label_name">트렘폴린</label></li>
+                                                                <li><input type="checkbox" title="물놀이장"><label for="" class="label_name">물놀이장</label></li>
+                                                                <li><input type="checkbox" title="놀이터"><label for="" class="label_name">놀이터</label></li>
+                                                                <li><input type="checkbox" title="산책로"><label for="" class="label_name">산책로</label></li>
+                                                                <li><input type="checkbox" title="운동장"><label for="" class="label_name">운동장</label></li>
+                                                                <li><input type="checkbox" title="운동시설"><label for="" class="label_name">운동시설</label></li>
+                                                                <li><input type="checkbox" title="마트.편의점"><label for="" class="label_name">마트.편의점</label></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div><!--//조건별검색 하단-->
+                        </div>
+                    </div><!--//조건 검색 박스-->
+                </div><!--//조건 검색 영역-->
+            </div>
+            <main>
+                <section class="section_01 section_inner"><!--섹션 영역-->
+                    <div class="theme_recommd_wrap inner_container"><!--섹션 너비-->
+                        <h2 class="tit">물놀이는 기본! 여름 휴가로 딱 좋은 캠핑장🌊</h2>
+                        <div class="slide_wrapper">
+                            <div class="theme_items_wrap slides"><!--슬라이드 vanilla js 사용. 정 안되면 slick으로 구현-->
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_recommd_01.jpg" alt="양양 서피비치">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">0[MD추천] 양양 서피비치 2박 3일 캠핑 (조식 제공 + 서핑보드 대여)</strong>
+                                        <p class="item_text">#20대 #우정여행 #좋은후기 #강원도</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">219,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_recommd_01.jpg" alt="양양 서피비치">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">1[MD추천] 양양 서피비치 2박 3일 캠핑 (조식 제공 + 서핑보드 대여)</strong>
+                                        <p class="item_text">#20대 #우정여행 #좋은후기 #강원도</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">219,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_recommd_01.jpg" alt="양양 서피비치">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">2[MD추천] 양양 서피비치 2박 3일 캠핑 (조식 제공 + 서핑보드 대여)</strong>
+                                        <p class="item_text">#20대 #우정여행 #좋은후기 #강원도</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">219,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_recommd_01.jpg" alt="양양 서피비치">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">3[MD추천] 양양 서피비치 2박 3일 캠핑 (조식 제공 + 서핑보드 대여)</strong>
+                                        <p class="item_text">#20대 #우정여행 #좋은후기 #강원도</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">219,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_recommd_01.jpg" alt="양양 서피비치">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">4[MD추천] 양양 서피비치 2박 3일 캠핑 (조식 제공 + 서핑보드 대여)</strong>
+                                        <p class="item_text">#20대 #우정여행 #좋은후기 #강원도</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">219,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_recommd_01.jpg" alt="양양 서피비치">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">5[MD추천] 양양 서피비치 2박 3일 캠핑 (조식 제공 + 서핑보드 대여)</strong>
+                                        <p class="item_text">#20대 #우정여행 #좋은후기 #강원도</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">219,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_recommd_01.jpg" alt="양양 서피비치">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">6[MD추천] 양양 서피비치 2박 3일 캠핑 (조식 제공 + 서핑보드 대여)</strong>
+                                        <p class="item_text">#20대 #우정여행 #좋은후기 #강원도</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">219,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <p class="btn_recommd btn_prev"><span></span></p>
+                        <p class="btn_recommd btn_next"><span></span></p>
+                    </div>
+                </section>
+                <section class="section_02 section_inner">
+                    <div class="theme_popular_wrap inner_container">
+                        <h2 class="tit">지금 인기 있는 캠핑장🔥</h2>
+                        <div class="theme_tabs">
+                            <ul class="tabs">
+                                <li class="selected"><a href="#">#가족캠핑</a></li>
+                                <li><a href="#">#특가할인</a></li>
+                                <li><a href="#">#해변</a></li>
+                                <li><a href="#">#애견동반</a></li>
+                                <li><a href="#">#20대</a></li>
+                            </ul>
+                        </div>
+                        <div class="tabsBody">
+                            <div class="theme_items_wrap">
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="theme_items_wrap">
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="theme_items_wrap">
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="theme_items_wrap">
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_04.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="theme_items_wrap">
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_popular_05.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <strong class="item_title item_title_big">[쿠폰할인] 4인가족 추천 포천 가족캠핑</strong>
+                                        <p class="item_text">#아늑한 #가성비 #신규</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">89,900
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section_03 section_inner">
+                    <div class="cont_wrap inner_container">
+                        <h3 class="txt_wrap">
+                            <p class="title_mag">#CAMPINGSTORY</p>
+                            <p class="title_cont">캠핑 요리의 모든 것</p>
+                        </h3>
+                        <div class="video_wrap">
+                            <figure>
+                                <iframe src="https://www.youtube.com/embed/CsZJHkmtJFI?start=113" frameborder="0" allow="accelerometer; autoplay; allowfullscreen"></iframe>
+                            </figure>
+                        </div>
+                        <div class="btn_view_more">
+                            <a href="#">VIEW MORE</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="section_04 section_inner">
+                    <div class="theme_activity_wrap inner_container">
+                        <div class="activity_wrap_in">
+                            <h2 class="tit">신나게 떠나볼까 액티비티 체험 패키지</h2>
+                            <div class="theme_tabs">
+                                <ul class="tabs">
+                                    <li class="selected"s><a href="#">수상 레저의 성지, 8월의 가평 </a></li>
+                                    <li><a href="#">짜릿한 패러글라이딩 1일 체험</a></li>
+                                    <li><a href="#">올 여름엔 서핑 도전! 양양 비치</a></li>
+                                </ul>
+                            </div>
+                            <div class="theme_bg"></div>
+                        </div>
+                        <div class="tabsBody">
+                            <div class="theme_items_wrap">
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_01.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="theme_items_wrap">
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_02.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="theme_items_wrap">
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="card_item_box">
+                                    <div class="img">
+                                        <img src="assets/img/img_theme_activity_03.jpg" alt="포천 가족캠핑장">
+                                    </div>
+                                    <div class="item_txt_wrap">
+                                        <p class="item_sub_text">패키지</p>
+                                        <strong class="item_title item_title_mid">[초특가] 수상레저 올인원 패키지</strong>
+                                        <p class="item_text">#20대추천 #캠프파이어</p>
+                                        <div class="price_group">
+                                            <strong class="price_now">180,000
+                                                <span>원~</span>
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section_05 section_inner">
+                    <div class="info_wrap inner_container">
+                        <div class="info_notice_wrap">
+                            <h2 class="tit">알려드립니다</h2>
+                            <ul class="notice_call">
+                                <li class="customer_call">
+                                    <span><img src="assets/img/icon/icon_phone_call_thin.svg" alt="고객센터"></span>
+                                    <h3>1:1 고객센터</h3>
+                                    <p>1544-XXXX</p>
+                                </li>
+                                <li class="long_stay">
+                                    <span><img src="assets/img/icon/icon_house_line_thin.svg" alt="장기투숙"></span>
+                                    <h3>장기투숙 문의</h3>
+                                    <p>1577-XXXX</p>
+                                </li>
+                            </ul>
+                            <div class="notice_time">
+                                <h3>상담시간</h3>
+                                <p>
+                                    <ul>
+                                        <li><h4>예약 및 서비스</h4></li>
+                                        <li>평일</li>
+                                        <li>오전 9시 ~ 오후 6시 (토, 일요일 및 공휴일 휴무)</li>
+                                    </ul>
+                                </p>
+                                <p>
+                                    <ul>
+                                        <li><h4>오프라인 매장</h4></li>
+                                        <li>평일</li>
+                                        <li>오전 9시 ~ 오후 6시 (토, 일요일 및 공휴일 휴무)</li>
+                                    </ul>
+                                    <span class="off_store_time">*종로점 업무 시간은 평일 오후 4시까지</span>
+                                </p>
+                            </div>
+                            <a href="#none" class="btn_more_info">더보기 <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                        <div class="info_event_wrap">
+                            <h2 class="tit">EVENT</h2>
+                            <div class="event_banner_01">
+                                <span><img src="assets/img/banner_event_01.png"></span>
+                                <div class="banner_txt">
+                                    <p>신규 가입 EVENT</p>
+                                    <p>리뷰 쓰고<br>
+                                        스타벅스 기프티콘 받자!</p>
+                                </div>
+                            </div>
+                            <div class="event_banner_02">
+                                <span><img src="assets/img/banner_event_02_new.jpg"></span>
+                                <div class="banner_txt">
+                                    <p>신한카드 결제 시<br>
+                                        10% 추가 적립</p>
+                                    <p>2022.06.17 -2022.07.17</p>
+                                    <p>
+                                        <span>*일부 카드는 행사에서 제외될 수 있습니다.</span><br>
+                                        <span>*회원가입 후 포인트 적립이 가능합니다.</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#none" class="btn_more_info">더보기 <i class="fa-solid fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <div class="bottom_banner_area">
+                <div class="inner_container">
+                    <div class="bottom_banner">
+                        <img src="assets/img/banner_bottom_bg.png" alt="맞춤 캠핑장 찾기 배너">
+                        <div class="banner_txt_wrap">
+                            <p>Are you ready to join our journey?</p>
+                            <p>나만 알고 싶은 캠핑장은 모캠프에서<p></p>
+                            <a href=""><span>맞춤 캠핑장 찾기 <i class="fa-solid fa-arrow-right-long"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <footer>
+            <div class="footer_top">
+                <ul class="horizon inner_container">
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                    <li><a href="#">여행자보험</a></li>
+                    <li><a href="#">광고 및 제휴</a></li>
+                    <li><a href="#">안전거래센터</a></li>
+                </ul>
+            </div>
+            <div class="footer_bottom horizon inner_container">
+                <div class="company_info">
+                    <h4>(주)모두의 캠프</h4>
+                    <p class="company_info_txt">
+                        대표 : Jane Cooper<br>
+                        주소 : 14 Teme Street, Tenbury Wells, WR15 8BA<br>
+                        사업자등록번호 : 222-11-00000014<br>
+                        <a href="#"><strong>사업자정보확인</strong></a>
+                    </p>
+                    <p class="copyright" style="font-size: 10px">COPYRIGHTⓒ MOCAMP. ALL RIGHTS RESERVED</p>
+                </div>
+                <div class="site_info about">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#">브랜드 스토리</a></li>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">채용정보</a></li>
+                        <li><a href="#">입점문의</a></li>
+                    </ul>
+                </div>
+                <div class="site_info service">
+                    <h4>Service</h4>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">자주하는 질문</a></li>
+                        <li><a href="#">고객의 소리</a></li>
+                        <li><a href="#">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <div class="site_info contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>mocamp@example.com</li>
+                        <li>+82 999-8888</li>
+                        <li>
+                            <ul class="sns_list horizon">
+                                <li><a href="#" class="sns youtube">유투브</a></li>
+                                <li><a href="#" class="sns insta">인스타그램</a></li>
+                                <li><a href="#" class="sns fb">페이스북</a></li>
+                                <li><a href="#" class="sns google">구글플레이</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="family_site">
+                    <button>
+                        <a href="#none">FAMILY SITE</a>
+                        <span></span>
+                    </button>
+                    <ul class="site_list">
+                        <li><a href="https://kto.visitkorea.or.kr/kor.kto" target="blank">한국관광공사</a></li>
+                        <li><a href="https://www.gocamping.or.kr/" target="blank">한국관광공사 고캠핑</a></li>
+                        <li><a href="https://www.seoul.go.kr/story/campingjang/pc.html" target="blank">서울로 떠나는 캠핑</a></li>
+                        <li><a href="https://yeyak.seoul.go.kr/web/main.do" target="blank">서울특별시 공공서비스예약</a></li>
+                        <li><a href="https://www.knps.or.kr/portal/main.do" target="blank">국립공원</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="publisher inner_container">Designed & published by tequilakkong</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+
+<!-- 
+    기본 구조
+    
+    <div id="wrapper">
+        <div id="wrap">
+            <header>
+                <h1></h1>
+                <nav class="gnb"></nav>
+            </header>
+            <main>
+                <section>recommend</section>
+                <section>popular</section>
+                <section>culture</section>
+                <section>activity</section>
+                <section>notice</section>
+                <section>event</section>
+            </main>
+        </div>
+        <div id="footer"></div>
+    </div>
+
+    시맨틱 태그 종류
+    <header>
+    <nav>
+    <figure> - 동영상, 사진 등 멀티미디어 담는 영역
+    <main> - 본문 콘텐츠 담는 영역
+    <aside> - 본문과 연관성이 적은 외부 영역
+    <section> - 특정 영역을 그룹화
+    <article> - 기사나 개별 콘텐츠 담는 영역
+    <footer>
+-->
