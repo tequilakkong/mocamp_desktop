@@ -325,8 +325,8 @@ tabBtn3.forEach(function(item,aa){
 });
 
 //datepicker - Gijgo Datepicker
-$('#datepicker').datepicker({ format: 'yyyy-dd-mm' });;
-$('#datepicker2').datepicker({ format: 'yyyy-dd-mm' });;
+$('#datepicker').datepicker({ format: 'yyyy-dd-mm' });
+$('#datepicker2').datepicker({ format: 'yyyy-dd-mm' });
 
 
 
