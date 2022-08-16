@@ -15,6 +15,7 @@ var totalMenu = document.querySelector('.list_total_menu'),
 //list_gnb_menu 마우스 호버 이벤트
 //ecma2016 const, let, ', =>
 const target = document.querySelector('.target');
+const gnbTitList = document.querySelectorAll('.gnb_tit_list');
 const links = document.querySelectorAll('.list_gnb_menu .gnb_tit');
 const gnbLists = document.querySelectorAll('.list_depth2_wrap');
 const color = '#3c8268';
@@ -24,9 +25,9 @@ const fontWt = 'bold';
 for(let i = 0; i < links.length; i++){
     //links[i].addEventListener('click', function(e){e.preventDefault();});
     links[i].addEventListener('click', (e) => e.preventDefault()); //링크를 클릭했을 때 기본 기능을 다 막은 것 
-    links[i].addEventListener('mouseenter', mouseenterFunc); //마우스를 올리면 mouseenterFunc를 실행함
-    links[i].addEventListener('mouseenter', showmenuFunc); //마우스를 올리면 mouseenterFunc를 실행함
-}
+    links[i].addEventListener('mouseover', mouseenterFunc); //마우스를 올리면 mouseenterFunc를 실행함
+    links[i].addEventListener('mouseover', showmenuFunc); //마우스를 올리면 mouseenterFunc를 실행함
+};
 
 function mouseenterFunc(){
     if(!this.parentNode.classList.contains('active')){ //여기서 this는 마우스를 올린 .gnb_tit //자바스크립트 .classList.contains = 제이쿼리 hasClass
@@ -34,11 +35,13 @@ function mouseenterFunc(){
             if(links[i].parentNode.classList.contains('active')){
                 links[i].parentNode.classList.remove('active');
             }
-            links[i].style.opacity = '0.3';
+            links[i].style.opacity = '0.4';
+            links[i].style.fontWeight = '';
         }//마우스가 올라가지 않은 다른 메뉴들 마다 할 일
         this.parentNode.classList.add('active'); 
         this.style.opacity = '1';
         this.style.color = color;
+        this.style.fontWeight = fontWt;
 
         //메뉴바 애니메이션
         const width = this.getBoundingClientRect().width; //자바스크립트는 a.getBoundingClientRect().width로 해당 요소의 넓이를 구함. 제이쿼리에서는 a.width(): 콘텐츠의 넓이 , a.innerWidth(): 패딩 포함 넓이, a.outerWidth: border 포함 넓이
@@ -66,18 +69,9 @@ function resizeFunc(){
 
         target.style.left = `${left}px`;
         target.style.top = `${top}px`;
-
     }
 }
 window.addEventListener('resize', resizeFunc);
-
-
-// window.addEventListener('mouseout', mouseoutFunc);
-
-// function mouseoutFunc(){
-//     target.style.borderColor = 'transparent';
-//     links.style.opacity = '1';
-// };
 
 
 //list_gnb_menu 하단 메뉴 나타남
@@ -85,12 +79,12 @@ function showmenuFunc(){
     for(let i = 0; i < links.length; i++){
         if(links[i].parentNode.classList.contains('active')){
             gnbLists[i].style.display = 'block';
+            links[i].parentNode.classList.remove('active');
         } else {
             gnbLists[i].style.display = 'none';
         }    
     }
 };
-
 
 
 
@@ -148,7 +142,7 @@ const popBox = document.querySelectorAll('.pop_box > .pop');
 for(let i = 0; i < selArea.length; i++){
     selArea[i].addEventListener('click', (e) => e.preventDefault()); //링크를 클릭했을 때 기본 기능을 다 막은 것 
     selArea[i].addEventListener('mouseenter', popEnterFunc); 
-    selArea[i].addEventListener('mouseenter', showPopFunc);
+    selArea[i].addEventListener('mouseenter', showPopFunc);//click
 }
 
 function popEnterFunc(){
@@ -172,6 +166,83 @@ function showPopFunc(){
         }    
     }
 };
+
+//pop_place 여행지 선택 팝업
+const province = document.querySelectorAll('.place_province ul li')
+const city = document.querySelectorAll('.city_container ul');
+
+for(let i = 0; i < province.length; i++){
+    province[i].addEventListener('click', selectPlace);
+    function selectPlace(e){
+        e.preventDefault();
+
+        province.forEach(item => {
+            item.classList.remove('selected');
+        })
+        city.forEach(item => {
+            item.classList.remove('selected');
+        })
+        province[i].classList.add('selected')
+        city[i].classList.add('selected')
+    }
+};
+//출처: https://velog.io/@qjagkrdldi/22.05.10-tabmenu-onclick-index
+
+
+// forEach(function (item, index, array) { }
+// for문과 다르게 배열의 길이만큼 알아서 반복됨
+// item : 배열의 각 대상을 의미한다.
+// index : 배열의 순서를 의미한다. (현재 몇번째 반복문이 돌고있는지)
+// arr : forEach 반복문에 사용되는 배열을 의미한다.
+// 출처: https://mine-it-record.tistory.com/343 [나만의 기록들:티스토리]
+// forEach문의 단점
+// 1. 반복문 내에서 배열이나 리스트 값을 변경하거나 추가할 수 없다. 
+// 오직 읽기 전용으로 불러오기 때문에 데이터를 수정할 수 없다.
+// 2. 배열을 역순으로 탐색할 수 없다. 
+// 순서대로 정보를 가져오기 때문에 역순으로 가져올 방법이 없다. 
+
+
+//지역 클릭
+var cityBtn = document.querySelectorAll('.city_container ul li');
+
+for(let i = 0; i < cityBtn.length; i++){
+    cityBtn[i].addEventListener('click', function(){
+        cityBtn[i].classList.toggle('selected');
+    });  
+};
+
+
+//인원수 선택
+var decrease= document.querySelector('.controller_minus');
+var increase = document.querySelector('.controller_plus');
+var number = document.querySelector('.quantity_now span');
+
+
+increase.onclick = () => {
+  const current = parseInt(number.innerText, 10);
+  number.innerText = current + 1;
+};
+
+decrease.onclick = () => {
+  const current = parseInt(number.innerText, 10);
+  number.innerText = current - 1;
+};//참고:https://mi-nya.tistory.com/222
+
+
+
+
+
+
+
+
+
+
+// //선택값 input에 출력
+// const itemForm = document.querySelectorAll('.select_area input');
+// const selectedPrv = document.querySelector('.place_province ul li.selected').innerHTML;
+// const selectedCt = document.querySelector('.city_container ul li.selected').innerHTML;
+
+// itemForm.inner = `${selectedPrv}` + `${selectedCt}`;
 
 
 
@@ -250,8 +321,8 @@ tabBtn3.forEach(function(item,aa){
 });
 
 //datepicker - Gijgo Datepicker
-$('#datepicker').datepicker();
-$('#datepicker2').datepicker();
+$('#datepicker').datepicker({ format: 'yyyy-dd-mm' });;
+$('#datepicker2').datepicker({ format: 'yyyy-dd-mm' });;
 
 
 
