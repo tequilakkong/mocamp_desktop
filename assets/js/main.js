@@ -218,12 +218,16 @@ var increase = document.querySelector('.controller_plus');
 var number = document.querySelector('.quantity_now span');
 
 
-increase.onclick = () => {
+increase.onclick = (e) => {
+  e.preventDefault();
+
   const current = parseInt(number.innerText, 10);
   number.innerText = current + 1;
 };
 
-decrease.onclick = () => {
+decrease.onclick = (e) => {
+  e.preventDefault();
+
   const current = parseInt(number.innerText, 10);
   number.innerText = current - 1;
 };//참고:https://mi-nya.tistory.com/222
