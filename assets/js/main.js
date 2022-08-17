@@ -213,10 +213,11 @@ for(let i = 0; i < cityBtn.length; i++){
 
 
 //인원수 선택
-var decrease= document.querySelector('.controller_minus');
-var increase = document.querySelector('.controller_plus');
-var number = document.querySelector('.quantity_now span');
 
+//성인
+var decrease= document.querySelector('.adult .controller_minus');
+var increase = document.querySelector('.adult .controller_plus');
+var number = document.querySelector('.adult .quantity_now span');
 
 increase.onclick = (e) => {
   e.preventDefault();
@@ -230,24 +231,47 @@ decrease.onclick = (e) => {
 
   const current = parseInt(number.innerText, 10);
   number.innerText = current - 1;
-};//참고:https://mi-nya.tistory.com/222
+};
 
+//소아
+var decrease2= document.querySelector('.child .controller_minus');
+var increase2 = document.querySelector('.child .controller_plus');
+var number2 = document.querySelector('.child .quantity_now span');
 
-
-
-
-
-
-
-
-
-// //선택값 input에 출력
-// const itemForm = document.querySelectorAll('.select_area input');
-// const selectedPrv = document.querySelector('.place_province ul li.selected').innerHTML;
-// const selectedCt = document.querySelector('.city_container ul li.selected').innerHTML;
-
-// itemForm.inner = `${selectedPrv}` + `${selectedCt}`;
-
+increase2.onclick = (e) => {
+    e.preventDefault();
+  
+    const current = parseInt(number2.innerText, 10);
+    number2.innerText = current + 1;
+  };
+  
+  decrease2.onclick = (e) => {
+    e.preventDefault();
+  
+    const current = parseInt(number2.innerText, 10);
+    number2.innerText = current - 1;
+  };
+  
+//유아
+  var decrease3= document.querySelector('.youth .controller_minus');
+  var increase3 = document.querySelector('.youth .controller_plus');
+  var number3 = document.querySelector('.youth .quantity_now span');
+  
+  increase3.onclick = (e) => {
+      e.preventDefault();
+    
+      const current = parseInt(number3.innerText, 10);
+      number3.innerText = current + 1;
+    };
+    
+    decrease3.onclick = (e) => {
+      e.preventDefault();
+    
+      const current = parseInt(number3.innerText, 10);
+      number3.innerText = current - 1;
+    };
+    //참고:https://mi-nya.tistory.com/222
+  
 
 
 
@@ -305,6 +329,7 @@ tabBtn2.forEach(function(item,aa){
         tabBody2[aa].style.display='flex';
     }
 });
+
 
 //section4 - theme_activity_wrap
 const tabBtn3 = document.querySelectorAll('.theme_activity_wrap .tabs li')
